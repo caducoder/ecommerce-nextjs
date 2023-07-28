@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Sneakers</h1>
+        <h1 className="text-5xl font-bold text-center py-4">Sneakers</h1>
       </main>
     </div>
   )
