@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (
@@ -9,9 +10,9 @@ export default function Home() {
         <meta name="description" content="Sneakers E-commerce Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <main>
-        <h1 className="text-5xl font-bold text-center py-4">Sneakers</h1>
+        
       </main>
     </div>
   )
