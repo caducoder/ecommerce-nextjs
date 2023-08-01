@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import { Slider } from '../components/Slider'
+import { Details } from '../components/Details'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Slider />
+        <Details />
       </main>
     </div>
   )
