@@ -56,8 +56,8 @@ export default function Navbar() {
                     <Image src={"/images/image-avatar.png"} alt='' width={25} height={25} />
                 </div>
             </div>
-            <div className={`absolute bottom-0 left-0 h-[100vh] z-99 w-full bg-stone-700/50 ${isOpenMobileMenu ? 'block' : 'hidden'}`}></div>
-            <div className={`transition absolute bottom-0 left-0 ease-in-out duration-300 bg-white w-2/3 h-full p-5 ${!isOpenMobileMenu ? '-translate-x-[100%]' : 'translate-x-0'}`}>
+            <div className={`absolute bottom-0 left-0 h-[100vh] z-10 w-full bg-stone-700/50 ${isOpenMobileMenu ? 'block' : 'hidden'}`}></div>
+            <div className={`transition absolute z-10 bottom-0 left-0 ease-in-out duration-300 bg-white w-2/3 h-full p-5 ${!isOpenMobileMenu ? '-translate-x-[100%]' : 'translate-x-0'}`}>
                 <button className='p-2 mb-6' onClick={() => setIsOpenMobileMenu(false)}>
                     <Image
                         src={"/images/icon-close.svg"}

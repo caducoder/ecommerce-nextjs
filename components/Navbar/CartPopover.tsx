@@ -1,17 +1,16 @@
 import React from 'react'
 import { createPortal } from 'react-dom';
-import Image from 'next/image'
 
 export const CartPopover = ({ open }: { open: boolean }) => {
     return (
         <>
             {open &&
                 createPortal(
-                    <div className="relative w-[100vw]">
-                        <div className='border rounded-md m-2 '>
+                    <div className="absolute w-[100vw] top-20">
+                        <div className='border rounded-md m-2 bg-white'>
                             <p className="font-bold p-5">Cart</p>
                             <hr />
-                            <div className='p-4 h-[240px] flex items-center justify-center'>
+                            <div className='p-4 h-[200px] flex items-center justify-center'>
                                 <span className='text-gray-500 font-bold'>Your cart is empty</span>
                             </div>
 
