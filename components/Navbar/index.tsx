@@ -30,7 +30,8 @@ export default function Navbar() {
                         src={"/images/icon-menu.svg"}
                         alt='Menu icon'
                         width={15}
-                        height={20} />
+                        height={20}
+                    />
                 </button>
                 <h1 className='text-3xl font-bold font-kumbh mb-1'>sneakers</h1>
                 <nav className='hidden md:block ml-4'>
