@@ -33,8 +33,8 @@ export const Slider = () => {
 
   return (
     <div className='w-full relative h-[296px] z-0 flex flex-row items-center justify-between'>
-      <div>
-        <Image src={slides[currentIndex].url} alt="Product images" layout='fill' />
+      <div className='relative w-full h-full'>
+        <Image src={slides[currentIndex].url} alt="Product images" fill />
       </div>
       <button
         className='flex items-center justify-center absolute p-2 bg-white rounded-full right-3 w-8 h-8'

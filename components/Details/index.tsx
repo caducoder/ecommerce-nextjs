@@ -1,8 +1,22 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import useCart from '../../hooks/useCart';
 
 export const Details = () => {
+  const { addToCart } = useCart()
   const [itemQuantity, setItemQuantity] = useState(0);
+
+  const handleClickAddToCartButton = () => {
+    const item = {
+      id: 1,
+      title: "Fall Limited Edition Sneakers",
+      price: 125.00,
+      quantity: itemQuantity
+    }
+
+    addToCart(item)
+  }
+
   return (
     <div className='flex flex-col p-4 gap-3'>
       <p className='uppercase text-orange text-xs tracking-widest font-bold'>Sneaker Company</p>
@@ -32,7 +46,7 @@ export const Details = () => {
       </div>
       <button
         className='p-2 bg-orange rounded-md text-white font-bold'
-        onClick={() => console.log('Added to cart')}
+        onClick={handleClickAddToCartButton}
       >
         Add to cart
       </button>

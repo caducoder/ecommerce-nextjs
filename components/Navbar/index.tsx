@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { CartPopover } from './CartPopover'
 import { useState } from 'react'
+import useCart from '../../hooks/useCart'
 
 const pages = [
     'Collections',
@@ -11,6 +12,7 @@ const pages = [
 ]
 
 export default function Navbar() {
+    const { cart } = useCart()
     const [isOpenPopover, setIsOpenPopover] = useState(false)
     const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false)
 
@@ -43,15 +45,22 @@ export default function Navbar() {
                 </nav>
             </div>
             <div className='flex flex-row items-center gap-3'>
-                <button className='p-2' onClick={handleOpenPopover}>
+                <button
+                    className={`
+                        relative p-2 before:content-["${cart.length > 0 ? cart.length : ''}"] before:bg-orange before:text-xs before:text-white 
+                        before:flex before:items-center before:justify-center before:w-min-[1.7em] before:h-min-[1.7em]
+                        before:absolute before:top-0 before:right-0 before:rounded-full before:px-1.5
+                    `}
+                    onClick={handleOpenPopover}
+                >
                     <Image
                         src={"/images/icon-cart.svg"}
                         alt='Menu icon'
-                        width={15}
-                        height={20}
+                        width={20}
+                        height={25}
                     />
                 </button>
-                <CartPopover open={isOpenPopover} />
+                <CartPopover open={isOpenPopover} cart={cart} />
                 <div className="rounded-full hover:border-orange border-white border-2">
                     <Image src={"/images/image-avatar.png"} alt='' width={25} height={25} />
                 </div>
