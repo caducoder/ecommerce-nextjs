@@ -13,7 +13,7 @@ const slides = [
   },
   {
     url: "/images/image-product-4.jpg"
-  },
+  }
 ]
 
 export const Slider = () => {
@@ -31,13 +31,31 @@ export const Slider = () => {
     setCurrentIndex(newIndex)
   }
 
+  const handleImgClick = (index: number) => {
+    setCurrentIndex(index)
+  }
+
   return (
-    <div className='w-full relative h-[296px] z-0 flex flex-row items-center justify-between'>
-      <div className='relative w-full h-full'>
-        <Image src={slides[currentIndex].url} alt="Product images" fill />
+    <div className='w-full relative h-[296px] z-0 flex flex-row items-center justify-between md:flex-col md:w-[500px] xl:h-[350px]'>
+      <div className='relative w-full h-full md:h-296px'>
+        <Image src={slides[currentIndex].url} alt="Product images" fill className='md:rounded-lg' />
+      </div>
+      <div className='hidden w-full mt-4 md:visible md:flex flex-row justify-between'>
+        {slides.map((img, i) => (
+          <Image
+            role='button'
+            key={i}
+            src={img.url}
+            alt='Item photo'
+            className={`relative rounded-md cursor-pointer border border-transparent ${currentIndex == i && 'border-orange'} hover:opacity-50`}
+            width={60}
+            height={60}
+            onClick={() => handleImgClick(i)}
+          />
+        ))}
       </div>
       <button
-        className='flex items-center justify-center absolute p-2 bg-white rounded-full right-3 w-8 h-8'
+        className='flex items-center justify-center absolute p-2 bg-white rounded-full right-3 w-8 h-8 md:hidden'
         onClick={nextSlide}
       >
         <Image
@@ -48,7 +66,7 @@ export const Slider = () => {
         />
       </button>
       <button
-        className='flex items-center justify-center absolute p-2 bg-white rounded-full left-3 w-8 h-8'
+        className='flex items-center justify-center absolute p-2 bg-white rounded-full left-3 w-8 h-8 md:hidden'
         onClick={prevSlide}
       >
         <Image

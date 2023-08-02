@@ -24,6 +24,7 @@ export default function Navbar() {
         setIsOpenPopover(false)
         setIsOpenMobileMenu(true)
     }
+
     return (
         <header className="md:container mx-auto flex flex-row items-center justify-between p-4 md:px-0 border-b">
             <div className='flex flex-row items-center gap-2'>

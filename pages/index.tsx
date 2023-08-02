@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import { Slider } from '../components/Slider'
 import { Details } from '../components/Details'
@@ -14,8 +13,10 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <Slider />
-        <Details />
+        <div className='md:container mx-auto md:flex md:flex-row md:items-center lg:px-24 md:mt-16 md:gap-8 lg:gap-16'>
+          <Slider />
+          <Details />
+        </div>
       </main>
     </div>
   )

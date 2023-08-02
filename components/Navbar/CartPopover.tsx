@@ -37,7 +37,7 @@ export const CartPopover = ({ open, cart, removeFromCart }: { open: boolean, car
                                         </button>
                                     </>
                                 ) : (
-                                    <div className='h-[160px] flex items-center justify-center'>
+                                    <div className='h-[120px] flex items-center justify-center'>
                                         <span className='text-gray-500 font-bold'>Your cart is empty</span>
                                     </div>
                                 )
