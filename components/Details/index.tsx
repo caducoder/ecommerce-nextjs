@@ -45,7 +45,7 @@ export const Details = () => {
         </button>
       </div>
       <button
-        className='p-2 bg-orange rounded-md text-white font-bold'
+        className='p-2 bg-orange rounded-md text-white font-bold hover:bg-opacity-80'
         onClick={handleClickAddToCartButton}
       >
         Add to cart

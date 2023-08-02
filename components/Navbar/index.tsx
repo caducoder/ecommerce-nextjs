@@ -12,7 +12,7 @@ const pages = [
 ]
 
 export default function Navbar() {
-    const { cart } = useCart()
+    const { cart, removeFromCart } = useCart()
     const [isOpenPopover, setIsOpenPopover] = useState(false)
     const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false)
 
@@ -60,7 +60,7 @@ export default function Navbar() {
                         height={25}
                     />
                 </button>
-                <CartPopover open={isOpenPopover} cart={cart} />
+                <CartPopover open={isOpenPopover} cart={cart} removeFromCart={removeFromCart} />
                 <div className="rounded-full hover:border-orange border-white border-2">
                     <Image src={"/images/image-avatar.png"} alt='' width={25} height={25} />
                 </div>
