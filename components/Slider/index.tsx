@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import useMediaQuery from 'beautiful-react-hooks/useMediaQuery'
+import { Lightbox } from './Lightbox';
 
-const slides = [
+export const slides = [
   {
     url: "/images/image-product-1.jpg"
   },
@@ -18,6 +20,13 @@ const slides = [
 
 export const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const isLarge = useMediaQuery('(min-width: 768px)');
+  const closeLightbox = () => setIsLightboxOpen(false);
+  const openLightbox = () => {
+    if (!isLarge) return;
+    setIsLightboxOpen(true);
+  }
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0
@@ -38,9 +47,9 @@ export const Slider = () => {
   return (
     <div className='w-full relative h-[296px] z-0 flex flex-row items-center justify-between md:flex-col md:max-w-sm xl:h-[450px]'>
       <div className='relative w-full h-full md:h-296px'>
-        <Image src={slides[currentIndex].url} alt="Product images" fill className='md:rounded-lg' />
+        <Image src={slides[currentIndex].url} alt="Product images" fill className='md:rounded-lg md:cursor-pointer' onClick={openLightbox} />
       </div>
-      <div className='hidden w-full mt-4 md:visible md:flex flex-row justify-between'>
+      <div className='hidden md:visible w-full mt-4 md:flex flex-row justify-between'>
         {slides.map((img, i) => (
           <Image
             role='button'
@@ -77,6 +86,7 @@ export const Slider = () => {
           className='mr-0.5'
         />
       </button>
+      <Lightbox isOpen={isLightboxOpen} close={closeLightbox} />
     </div>
   )
 }
