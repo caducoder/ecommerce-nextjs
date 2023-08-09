@@ -13,7 +13,9 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <div className='md:container mx-auto md:flex md:flex-row md:items-center lg:px-24 md:mt-16 md:gap-8 lg:gap-16'>
+        <div
+          className='md:container mx-auto md:flex md:flex-row md:items-center md: justify-evenly lg:px-24 md:mt-16 md:gap-8 lg:gap-16'
+        >
           <Slider />
           <Details />
         </div>

@@ -37,7 +37,7 @@ export default function Navbar() {
                     />
                 </button>
                 <h1 className='text-3xl font-bold font-kumbh mb-1'>sneakers</h1>
-                <nav className='hidden md:block ml-4'>
+                <nav className='hidden md:block ml-8'>
                     <ul className='flex flex-row gap-1'>
                         {pages.map((pg, i) => (
                             <li key={i} className='p-2 text-dark-grayish-blue cursor-pointer border-2 border-transparent hover:text-black hover:border-b-orange'>{pg}</li>
@@ -63,7 +63,7 @@ export default function Navbar() {
                 </button>
                 <CartPopover open={isOpenPopover} cart={cart} removeFromCart={removeFromCart} />
                 <div className="rounded-full hover:border-orange border-white border-2">
-                    <Image src={"/images/image-avatar.png"} alt='' width={25} height={25} />
+                    <Image src={"/images/image-avatar.png"} alt='' width={30} height={30} />
                 </div>
             </div>
             <div className={`absolute bottom-0 left-0 h-[100vh] z-10 w-full bg-stone-700/50 ${isOpenMobileMenu ? 'block' : 'hidden'}`}></div>

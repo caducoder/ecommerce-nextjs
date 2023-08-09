@@ -36,7 +36,7 @@ export const Slider = () => {
   }
 
   return (
-    <div className='w-full relative h-[296px] z-0 flex flex-row items-center justify-between md:flex-col md:w-[500px] xl:h-[350px]'>
+    <div className='w-full relative h-[296px] z-0 flex flex-row items-center justify-between md:flex-col md:max-w-sm xl:h-[450px]'>
       <div className='relative w-full h-full md:h-296px'>
         <Image src={slides[currentIndex].url} alt="Product images" fill className='md:rounded-lg' />
       </div>

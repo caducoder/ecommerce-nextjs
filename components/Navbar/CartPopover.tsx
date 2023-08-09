@@ -8,7 +8,7 @@ export const CartPopover = ({ open, cart, removeFromCart }: { open: boolean, car
             {open &&
                 createPortal(
                     <div className="absolute w-[100vw] top-20 sm:w-[375px] sm:right-8">
-                        <div className='border rounded-md m-2 bg-white'>
+                        <div className='rounded-md shadow-xl m-2 bg-white'>
                             <p className="font-bold p-5">Cart</p>
                             <hr />
                             <div className='p-4'>
