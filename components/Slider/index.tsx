@@ -53,6 +53,7 @@ export const Slider = () => {
         {slides.map((img, i) => (
           <Image
             role='button'
+            aria-label='thumbnail preview'
             key={i}
             src={img.url}
             alt='Item photo'
@@ -64,8 +65,10 @@ export const Slider = () => {
         ))}
       </div>
       <button
+        type='button'
         className='flex items-center justify-center absolute p-2 bg-white rounded-full right-3 w-8 h-8 md:hidden'
         onClick={nextSlide}
+        aria-label='Next slide'
       >
         <Image
           src={"/images/icon-next.svg"}
@@ -75,8 +78,10 @@ export const Slider = () => {
         />
       </button>
       <button
+        type='button'
         className='flex items-center justify-center absolute p-2 bg-white rounded-full left-3 w-8 h-8 md:hidden'
         onClick={prevSlide}
+        aria-label='Previous slide'
       >
         <Image
           src={"/images/icon-previous.svg"}

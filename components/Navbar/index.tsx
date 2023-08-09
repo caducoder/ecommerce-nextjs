@@ -63,7 +63,7 @@ export default function Navbar() {
                 </button>
                 <CartPopover open={isOpenPopover} cart={cart} removeFromCart={removeFromCart} />
                 <div className="rounded-full hover:border-orange border-white border-2">
-                    <Image src={"/images/image-avatar.png"} alt='' width={30} height={30} />
+                    <Image src={"/images/image-avatar.png"} alt='User photo' width={30} height={30} />
                 </div>
             </div>
             <div className={`absolute bottom-0 left-0 h-[100vh] z-10 w-full bg-stone-700/50 ${isOpenMobileMenu ? 'block' : 'hidden'}`}></div>

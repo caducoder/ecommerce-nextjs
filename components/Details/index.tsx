@@ -37,11 +37,11 @@ export const Details = () => {
       </div>
       <div className='flex flex-row justify-between p-2 bg-light-blue rounded-md'>
         <button className='p-2' onClick={() => setItemQuantity(prev => prev > 0 ? prev - 1 : 0)}>
-          <Image src={'/images/icon-minus.svg'} alt='' width={10} height={10} />
+          <Image src={'/images/icon-minus.svg'} alt='Minus icon' width={10} height={10} />
         </button>
         <span className='font-bold'>{itemQuantity}</span>
         <button className='p-2' onClick={() => setItemQuantity(prev => prev + 1)}>
-          <Image src={'/images/icon-plus.svg'} alt='' width={10} height={10} />
+          <Image src={'/images/icon-plus.svg'} alt='Plus icon' width={10} height={10} />
         </button>
       </div>
       <button

@@ -17,7 +17,7 @@ export const CartPopover = ({ open, cart, removeFromCart }: { open: boolean, car
                                         {cart.map(prod => (
                                             <div key={prod.id} className='flex flex-row justify-between'>
                                                 <div>
-                                                    <Image src={'https://fakeimg.pl/50x50/'} width={50} height={50} alt='' />
+                                                    <Image src={'https://fakeimg.pl/50x50/'} width={50} height={50} alt='Image placeholder' />
                                                 </div>
                                                 <div className='text-gray-500 text-md'>
                                                     <p>{prod.title}</p>

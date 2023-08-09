@@ -42,7 +42,7 @@ export const Lightbox = ({ isOpen, close }: { isOpen: boolean, close: () => void
         <div className='relative h-[400px] w-[400px]'>
           <Image
             src={slides[currentIndex].url}
-            alt=''
+            alt='Current image'
             width={400}
             height={400}
             className='rounded-lg'
